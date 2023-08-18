@@ -14,10 +14,10 @@ import '@fontsource/roboto/500.css';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#89bf4f',
+      main: '#ffd700',
     },
     secondary: {
-      main: '#70e69a',
+      main: '#cf8d00',
     },
   },
 });

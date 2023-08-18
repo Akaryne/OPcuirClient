@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import ProductPage from './components/ProductPage'
+import BackgroundAcceuil from './components/BackgroundAcceuil'
 import {AppBar, Container, Icon, IconButton, Typography} from "@mui/material"
 
 
@@ -23,6 +24,7 @@ function App(){
           </IconButton>
         </Container>
       </AppBar>
+      <BackgroundAcceuil/>
       <ProductPage />
     </Fragment>
   )
