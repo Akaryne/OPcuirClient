@@ -1,5 +1,5 @@
 import React, { useEffect, useState,useRef } from "react"
-import { Button, Card, CardActions, CardContent, CardMedia, Container, Grid, IconButton, Paper, Typography } from "@mui/material"
+import { Button, Card, CardActions, CardContent, CardMedia, Container, Grid, IconButton, Paper, Rating, Typography } from "@mui/material"
 
 import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlined';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
@@ -35,9 +35,21 @@ function BoxProduct({elem}){
                         image={`./img/test${elem.id}.png`}
                         />
                         <CardContent>
-                            <Typography>{elem.name}</Typography>
-                            <Typography>Prix : {elem.price} euros</Typography>
+                        <Grid container spacing={4}>
+                            <Grid item xs={12} md={6}>
+
+                                <Typography variant='h3'>{elem.name}</Typography>
+                                <Typography variant='subtitle'>Prix : {elem.price} euros</Typography>
+                            </Grid>
+                            <Grid item xs={12} md={6} sx={{display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column'}}>
+                                <Rating defaultValue={elem.rating} precision={0.5} readOnly />
+                                <Typography variant='subtitle'>({elem.avis} : Avis)</Typography>
+
+                            </Grid>
+                        </Grid>
                         </CardContent>
+                            
+                            
                         <CardActions sx={{pr:2,pl:2}}>
 
                         <Grid container spacing={4}>
@@ -51,7 +63,7 @@ function BoxProduct({elem}){
                                 <div style={{display:'flex',justifyContent:'center',alignContent:'baseline'}}>
                                     <IconButton onClick={()=>setQuantity(p => p+1)}><AddOutlinedIcon/></IconButton>
                                     <Typography variant="body1" sx={{display:'flex',justifyContent:'center',alignItems:'center'}}>{quantity}</Typography>
-                                    <IconButton onClick={()=>setQuantity(p => p-1)}><RemoveOutlinedIcon/></IconButton>
+                                    <IconButton onClick={()=>setQuantity(p => p-1 > 0 ? p-1 : 0)}><RemoveOutlinedIcon/></IconButton>
                                 </div>
                                 
                             </Grid>

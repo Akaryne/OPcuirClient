@@ -25,8 +25,8 @@ function BackgroundAcceuil(){
             background:'#ffffff5e'
           }}
         >
-          <Typography variant='h1' fontSize={100} sx={{textShadow:'grey 0px 0px 10px'}}>
-            OP cuir
+          <Typography variant='h1' fontSize={90} sx={{textShadow:'grey 0px 0px 10px'}}>
+            OP Création
           </Typography>
           <Typography variant='subtitle' fontSize={50} style={{ marginTop: '0.5rem' }} sx={{textShadow:'grey 0px 0px 10px'}}>
             Artiste et créateur
